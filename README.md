@@ -42,3 +42,7 @@ You can start the server using this command:
 ```bash
 yarn dev
 ```
+
+### 3. Deploy to Azure
+
+[check here for the demo](https://solanahackathon2022.azurewebsites.net)
