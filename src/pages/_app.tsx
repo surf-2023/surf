@@ -1,16 +1,25 @@
-import { AppProps } from 'next/app';
+import { ChakraProvider } from "@chakra-ui/react"
+import { extendTheme } from "@chakra-ui/react"
+import type { AppProps } from "next/app"
 
-import '@/styles/globals.css';
-// !STARTERCONF This is for demo purposes, remove @/styles/colors.css import immediately
-import '@/styles/colors.css';
+import WalletContextProvider from "../components/WalletContextProvider"
 
-/**
- * !STARTERCONF info
- * ? `Layout` component is called in every page using `np` snippets. If you have consistent layout across all page, you can add it here too
- */
-
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+const colors = {
+  background: "#1F1F1F",
+  accent: "#833BBE",
+  bodyText: "rgba(255, 255, 255, 0.75)",
 }
 
-export default MyApp;
+const theme = extendTheme({ colors })
+
+function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <ChakraProvider theme={theme}>
+      <WalletContextProvider>
+        <Component {...pageProps} />
+      </WalletContextProvider>
+    </ChakraProvider>
+  )
+}
+
+export default MyApp
