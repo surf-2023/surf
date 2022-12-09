@@ -1,16 +1,16 @@
-import { ChakraProvider } from "@chakra-ui/react"
-import { extendTheme } from "@chakra-ui/react"
-import type { AppProps } from "next/app"
+import { ChakraProvider } from '@chakra-ui/react';
+import { extendTheme } from '@chakra-ui/react';
+import type { AppProps } from 'next/app';
 
-import WalletContextProvider from "../components/WalletContextProvider"
+import WalletContextProvider from '../components/WalletContextProvider';
 
 const colors = {
-  background: "#1F1F1F",
-  accent: "#833BBE",
-  bodyText: "rgba(255, 255, 255, 0.75)",
-}
+  background: '#1F1F1F',
+  accent: '#833BBE',
+  bodyText: 'rgba(255, 255, 255, 0.75)',
+};
 
-const theme = extendTheme({ colors })
+const theme = extendTheme({ colors });
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
       </WalletContextProvider>
     </ChakraProvider>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;

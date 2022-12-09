@@ -1,6 +1,6 @@
 <div align="center">
   <h1><b>🏄 Surf</b></h1>
-  <p>Smart contract made easy</p>
+  <p>Smart contract made easy!</p>
   <p>Next.js + Tailwind CSS + TypeScript</p>
 </div>
 

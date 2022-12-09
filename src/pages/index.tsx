@@ -1,43 +1,42 @@
-import { Box, Center, Spacer, Stack } from "@chakra-ui/react"
-import { useWallet } from "@solana/wallet-adapter-react"
-import type { NextPage } from "next"
-import Head from "next/head"
+import { Box, Center, Spacer, Stack } from '@chakra-ui/react';
+import { useWallet } from '@solana/wallet-adapter-react';
+import type { NextPage } from 'next';
+import Head from 'next/head';
 
 // import { connected } from "process"
-import styles from "../styles/Home.module.css"
+import styles from '../styles/Home.module.css';
 
-import NavBar from "../components/NavBar"
+import NavBar from '../components/NavBar';
 
 const Home: NextPage = () => {
-  const {connected} = useWallet()
+  const { connected } = useWallet();
   return (
     <div className={styles.container}>
       <Head>
         <title>Buildoors</title>
-        <meta name="The NFT Collection for Buildoors" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name='The NFT Collection for Buildoors' />
+        <link rel='icon' href='/favicon.ico' />
       </Head>
 
       <Box
-        w="full"
-        h="calc(100vh)"
-        bgImage={connected ? "" : "url(/images/home-background.svg)"}
-        backgroundPosition="center"
+        w='full'
+        h='calc(100vh)'
+        bgImage={connected ? '' : 'url(/images/home-background.svg)'}
+        backgroundPosition='center'
       >
-        <Stack w="full" h="calc(100vh)" justify="center">
-					<NavBar />
+        <Stack w='full' h='calc(100vh)' justify='center'>
+          <NavBar />
 
           <Spacer />
-          <Center>
-                </Center>
+          <Center></Center>
           <Spacer />
 
           <Center>
-            <Box marginBottom={4} color="white">
+            <Box marginBottom={4} color='white'>
               <a
-                href="https://twitter.com/MetacampDAO"
-                target="_blank"
-                rel="noopener noreferrer"
+                href='https://twitter.com/MetacampDAO'
+                target='_blank'
+                rel='noopener noreferrer'
               >
                 built @metacamp
               </a>
@@ -46,7 +45,7 @@ const Home: NextPage = () => {
         </Stack>
       </Box>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
