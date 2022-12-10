@@ -148,10 +148,10 @@
 .code-page-diagram,
 .code-page-code-window {
   background-color: #3e3e3e;
-  border-color: #eea10c;
+  border-color: #ffb016;
   border-width: 1.33px;
   padding: 15px;
-  color: #d0d0d0;
+  color: #ffffff;
 }
 .code-page-subfile {
   margin-left: 5px;
