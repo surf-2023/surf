@@ -142,10 +142,12 @@
   display: flex;
   flex-direction: column;
 }
+
 .code-page-file-explorer,
 .code-page-prompt {
   cursor: pointer;
 }
+
 .code-page-file-explorer,
 .code-page-prompt,
 .code-page-diagram,
@@ -156,9 +158,12 @@
   padding: 15px;
   color: #ffffff;
 }
-.code-page-subfile {
+
+.code-page-subfile,
+.docs-page-subdirectory {
   margin-left: 5px;
 }
+
 .code-page-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -166,19 +171,52 @@
   padding: 20px;
   gap: 20px;
 }
+
 .code-page-left {
   display: grid;
   grid-template-rows: 2fr 1fr;
   height: 100%;
   gap: 20px;
 }
+
 .code-page-upper-left {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 20px;
 }
-.code-page-background {
+
+.code-page-background,
+.docs-page-background {
   background-color: #3e3e3e;
   height: 100vh;
   width: 100vw;
+}
+
+.docs-page-container {
+  display: grid;
+  grid-template-columns: 3fr 12fr 4fr;
+  height: 90%;
+  padding: 0 20px 20px 20px;
+  color: #ffffff;
+}
+
+.docs-page-content {
+  padding: 20px;
+}
+
+.docs-page-interdocs {
+  cursor: pointer;
+  border-right: 1.33px solid #ffb016;
+}
+
+.docs-page-intradocs {
+  cursor: pointer;
+  border-left: 1.33px solid #ffb016;
+  height: fit-content;
+  margin-top: 20px;
+  padding-top: 20px;
+  padding-left: 10px;
+}
+.docs-page-selected-doc {
+  color: #ffb016;
 }
