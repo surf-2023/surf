@@ -2,7 +2,13 @@ import { FC, useState } from 'react';
 
 import styles from '../../styles/Home.module.css';
 
-const File: FC = ({ file }) => {
+import type { FileType } from './FileExplorer';
+
+type FileProps = {
+  file: FileType;
+};
+
+const File: FC<FileProps> = ({ file }) => {
   const [isVisible, toggleVisibility] = useState(false);
   return (
     <div>
@@ -11,8 +17,8 @@ const File: FC = ({ file }) => {
       </div>
       {file.isDirectory && isVisible && (
         <div className={styles['code-page-subfile']}>
-          {file.files.map((subfile) => (
-            <File file={subfile} key={subfile} />
+          {file.files?.map((subfile) => (
+            <File file={subfile} key={subfile.name} />
           ))}
         </div>
       )}

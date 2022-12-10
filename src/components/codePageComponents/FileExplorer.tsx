@@ -36,7 +36,7 @@ const FileExplorer: FC = () => {
   return (
     <div className={styles['code-page-file-explorer']}>
       {files.map((file) => (
-        <File file={file} key={file} />
+        <File file={file} key={file.name} />
       ))}
     </div>
   );
