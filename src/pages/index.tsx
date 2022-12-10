@@ -7,7 +7,6 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react';
-import { useWallet } from '@solana/wallet-adapter-react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
@@ -16,22 +15,24 @@ import styles from '../styles/Home.module.css';
 import WithSubnavigation from '@/components/NavBar';
 
 const Home: NextPage = () => {
-  const { connected } = useWallet();
   return (
     <div className={styles.container}>
       <Head>
-        <title>Buildoors</title>
-        <meta name='The NFT Collection for Buildoors' />
-        <link rel='icon' href='/favicon.ico' />
+        <title>Surf</title>
+        <meta name='smart contract esay onboarding' />
+        <link rel='icon' href='/logo.ico' />
       </Head>
 
-      <Box
-        w='full'
-        h='auto'
-        bgImage={connected ? '' : 'url(/images/home-background.svg)'}
-        backgroundPosition='center'
-      >
-        <Stack w='full' h='calc(100vh)' justify='center'>
+      <Box w='full' h='auto'>
+        <Stack
+          w='full'
+          h='calc(100vh)'
+          justify='center'
+          bgSize='80%'
+          bgImage="url('/images/home-page-1.png')"
+          bgRepeat='no-repeat'
+          bgPosition='bottom'
+        >
           <WithSubnavigation />
 
           <Box h='calc(20vh)'></Box>
