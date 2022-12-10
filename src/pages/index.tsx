@@ -88,13 +88,16 @@ const Home: NextPage = () => {
         </Stack>
 
         <Stack w='full' h='calc(100vh)' justify='center' padding='20'>
-          <Stack justify='left'>
-            <Text className={styles['p']}>deploy token</Text>
-          </Stack>
-          <Flex></Flex>
-          <Stack>
-            <Text className={styles['p']}>deploy NFT</Text>
-          </Stack>
+          <Text className={styles['p']}>Choose to start</Text>
+
+          <Flex>
+            <Box className={styles['card']}>
+              <Text className={styles['p']}></Text>
+            </Box>
+          </Flex>
+
+          <Text className={styles['p']}>deploy NFT</Text>
+
           <Flex></Flex>
           <Spacer />
 

@@ -38,6 +38,7 @@ export default function WithSubnavigation() {
         borderColor={useColorModeValue('gray.200', 'gray.900')}
         align='center'
         borderBottomRadius='5'
+        border='3px solid #000000'
       >
         <Flex
           flex={{ base: 1 }}
@@ -72,7 +73,7 @@ const DesktopNav = () => {
   const popoverContentBgColor = useColorModeValue('white', 'gray.800');
 
   return (
-    <Stack direction='row' spacing={4}>
+    <Stack direction='row' spacing={6}>
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
           <Popover trigger='hover' placement='bottom-start'>
@@ -94,12 +95,14 @@ const DesktopNav = () => {
 
             {navItem.children && (
               <PopoverContent
-                border={0}
-                boxShadow='xl'
+                // boxShadow='xl'
                 bg={popoverContentBgColor}
                 p={4}
                 rounded='xl'
                 minW='sm'
+                background='#FFFFFF'
+                border='3px solid #000000'
+                box-shadow='3px 3px 0px rgba(0, 0, 0, 0.43)'
               >
                 <Stack>
                   {navItem.children.map((child) => (
@@ -123,13 +126,15 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
       display='block'
       p={2}
       rounded='md'
-      _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}
+      border='3px solid #000000'
+      box-shadow='3px 3px 0px rgba(0, 0, 0, 0.43)'
+      _hover={{ bg: useColorModeValue('#f0dcb4', 'gray.900') }}
     >
       <Stack direction='row' align='center'>
         <Box>
           <Text
             transition='all .3s ease'
-            _groupHover={{ color: 'pink.400' }}
+            // _groupHover={{ color: '#FFFFFF' }}
             fontWeight={500}
           >
             {label}
@@ -145,7 +150,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
           align='center'
           flex={1}
         >
-          <Icon color='pink.400' w={5} h={5} as={ChevronRightIcon} />
+          <Icon color='p#FFFFFF' w={5} h={5} as={ChevronRightIcon} />
         </Flex>
       </Stack>
     </Link>
@@ -161,41 +166,51 @@ interface NavItem {
 
 const NAV_ITEMS: Array<NavItem> = [
   {
-    label: 'Inspiration',
+    label: 'SurfBoard',
     children: [
       {
-        label: 'Explore Design Work',
-        subLabel: 'Trending Design to inspire you',
+        label: 'Learning',
+        subLabel: 'Guided by AI',
         href: '#',
       },
       {
-        label: 'New & Noteworthy',
-        subLabel: 'Up-and-coming Designers',
+        label: 'Developing',
+        subLabel: 'Straight to the workspace',
+        href: '#',
+      },
+      {
+        label: 'Smart Contracts Guide Book?',
+        subLabel: 'templates?',
         href: '#',
       },
     ],
   },
   {
-    label: 'Find Work',
+    label: 'Docs',
     children: [
       {
-        label: 'Job Board',
-        subLabel: 'Find your dream design job',
+        label: 'Meet Solana',
+        subLabel: 'What is Solana',
         href: '#',
       },
       {
-        label: 'Freelance Projects',
+        label: 'Meet Rust',
         subLabel: 'An exclusive list for contract work',
         href: '#',
       },
     ],
   },
   {
-    label: 'Learn Design',
-    href: '#',
-  },
-  {
-    label: 'Hire Designers',
-    href: '#',
+    label: 'About Us',
+    children: [
+      {
+        label: 'Our Goal',
+        href: '#',
+      },
+      {
+        label: 'Our Teams',
+        href: '#',
+      },
+    ],
   },
 ];
