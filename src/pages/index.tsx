@@ -1,4 +1,4 @@
-import { Box, Center, Spacer, Stack } from '@chakra-ui/react';
+import { Box, Center, Flex, Image, Spacer, Stack } from '@chakra-ui/react';
 import { useWallet } from '@solana/wallet-adapter-react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
@@ -20,7 +20,7 @@ const Home: NextPage = () => {
 
       <Box
         w='full'
-        h='calc(100vh)'
+        h='auto'
         bgImage={connected ? '' : 'url(/images/home-background.svg)'}
         backgroundPosition='center'
       >
@@ -28,7 +28,40 @@ const Home: NextPage = () => {
           <WithSubnavigation />
 
           <Spacer />
-          <Center></Center>
+          <Center>Smart Contract made easy!</Center>
+          <Spacer />
+        </Stack>
+
+        <Stack w='full' h='calc(100vh)' justify='center'>
+          <Spacer />
+          <Flex>
+            <Image src='/images/home1.png' boxSize='50px' alt='logo' />
+            <Center>Smart Contract made easy!</Center>
+          </Flex>
+          <Spacer />
+        </Stack>
+
+        <Stack w='full' h='calc(100vh)' justify='center'>
+          <Spacer />
+          <Flex>
+            <Center>Smart Contract made easy!</Center>
+            <Image src='/images/home1.png' boxSize='50px' alt='logo' />
+          </Flex>
+          <Spacer />
+        </Stack>
+
+        <Stack w='full' h='calc(100vh)' justify='center'>
+          <Spacer />
+          <Flex>
+            <Image src='/images/home1.png' boxSize='50px' alt='logo' />
+            <Center>Smart Contract made easy!</Center>
+          </Flex>
+          <Spacer />
+        </Stack>
+
+        <Stack w='full' h='calc(100vh)' justify='center'>
+          <Spacer />
+          <Center>Smart Contract made easy!</Center>
           <Spacer />
 
           <Center>

@@ -132,7 +132,10 @@
   background: #1f1f1f;
 }
 .wallet-adapter-button-trigger {
-  background-color: #003d88;
+  box-sizing: border-box;
+  background: #0066ff;
+  border: 3px solid #000000;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.43);
 }
 
 .code-page-file-explorer {

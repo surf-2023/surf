@@ -37,6 +37,7 @@ export default function WithSubnavigation() {
         borderStyle='solid'
         borderColor={useColorModeValue('gray.200', 'gray.900')}
         align='center'
+        borderBottomRadius='5'
       >
         <Flex
           flex={{ base: 1 }}
@@ -44,7 +45,7 @@ export default function WithSubnavigation() {
           align='center'
         >
           <Image src='/images/logo.png' boxSize='50px' alt='logo' />
-
+          {/* <Spacer /> */}
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
             <DesktopNav />
           </Flex>
