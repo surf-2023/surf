@@ -1,9 +1,16 @@
-import { Box, Center, Flex, Image, Spacer, Stack } from '@chakra-ui/react';
+import {
+  Box,
+  Center,
+  Flex,
+  Image,
+  Spacer,
+  Stack,
+  Text,
+} from '@chakra-ui/react';
 import { useWallet } from '@solana/wallet-adapter-react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
-// import { connected } from "process"
 import styles from '../styles/Home.module.css';
 
 import WithSubnavigation from '@/components/NavBar';
@@ -27,8 +34,13 @@ const Home: NextPage = () => {
         <Stack w='full' h='calc(100vh)' justify='center'>
           <WithSubnavigation />
 
-          <Spacer />
-          <Center>Smart Contract made easy!</Center>
+          <Box h='calc(20vh)'></Box>
+          <Center className={styles['home-page-h1']}>
+            <Text className={styles['gradient']}>
+              Smart Contract made easy!
+            </Text>
+          </Center>
+          <Center className={styles['p']}>a web based IDE for everyone</Center>
           <Spacer />
         </Stack>
 
@@ -36,7 +48,15 @@ const Home: NextPage = () => {
           <Spacer />
           <Flex>
             <Image src='/images/home1.png' boxSize='50px' alt='logo' />
-            <Center>Smart Contract made easy!</Center>
+            <Spacer />
+            <Stack>
+              <Center className={styles['home-page-h2']}>
+                Smart Contract made easy!
+              </Center>
+              <Center className={styles['p']}>
+                a web based IDE for everyone
+              </Center>
+            </Stack>
           </Flex>
           <Spacer />
         </Stack>
@@ -44,7 +64,15 @@ const Home: NextPage = () => {
         <Stack w='full' h='calc(100vh)' justify='center'>
           <Spacer />
           <Flex>
-            <Center>Smart Contract made easy!</Center>
+            <Stack>
+              <Center className={styles['home-page-h2']}>
+                Smart Contract made easy!
+              </Center>
+              <Center className={styles['p']}>
+                a web based IDE for everyone
+              </Center>
+            </Stack>
+            <Spacer />
             <Image src='/images/home1.png' boxSize='50px' alt='logo' />
           </Flex>
           <Spacer />
@@ -54,7 +82,15 @@ const Home: NextPage = () => {
           <Spacer />
           <Flex>
             <Image src='/images/home1.png' boxSize='50px' alt='logo' />
-            <Center>Smart Contract made easy!</Center>
+            <Spacer />
+            <Stack>
+              <Center className={styles['home-page-h2']}>
+                Smart Contract made easy!
+              </Center>
+              <Center className={styles['p']}>
+                a web based IDE for everyone
+              </Center>
+            </Stack>
           </Flex>
           <Spacer />
         </Stack>
