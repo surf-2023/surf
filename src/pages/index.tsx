@@ -28,31 +28,35 @@ const Home: NextPage = () => {
           w='full'
           h='calc(100vh)'
           justify='center'
-          bgSize='80%'
+          bgSize='70%'
           bgImage="url('/images/home-page-1.png')"
           bgRepeat='no-repeat'
-          bgPosition='bottom'
+          bgPosition='center'
         >
-          <WithSubnavigation />
+          <Center>
+            <WithSubnavigation />
+          </Center>
 
           <Box h='calc(20vh)'></Box>
           <Center className={styles['home-page-h1']}>
-            <Text className={styles['gradient']}>
-              Smart Contract made easy!
-            </Text>
+            <Text className={styles['gradient']}>Smart Contract made easy</Text>
           </Center>
           <Center className={styles['p']}>a web based IDE for everyone</Center>
           <Spacer />
         </Stack>
 
-        <Stack w='full' h='calc(100vh)' justify='center'>
+        <Stack w='full' h='calc(100vh)' justify='center' padding='20'>
           <Spacer />
           <Flex>
-            <Image src='/images/home1.png' boxSize='50px' alt='logo' />
+            <Image src='/images/code-demo-1.png' boxSize='50px' alt='logo' />
             <Spacer />
             <Stack>
               <Center className={styles['home-page-h2']}>
-                Smart Contract made easy!
+                Deploy smart contracts
+              </Center>
+              <Center className={styles['home-page-h2']}>
+                <span className={styles['gradient']}>faster</span>&nbsp;than
+                ever
               </Center>
               <Center className={styles['p']}>
                 a web based IDE for everyone
@@ -62,51 +66,45 @@ const Home: NextPage = () => {
           <Spacer />
         </Stack>
 
-        <Stack w='full' h='calc(100vh)' justify='center'>
+        <Stack w='full' h='calc(100vh)' justify='center' padding='20'>
           <Spacer />
           <Flex>
             <Stack>
               <Center className={styles['home-page-h2']}>
-                Smart Contract made easy!
+                Learn and develop
+              </Center>
+              <Center className={styles['home-page-h2']}>
+                together with{' '}
+                <span className={styles['gradient']}>&nbsp;AI</span>
               </Center>
               <Center className={styles['p']}>
                 a web based IDE for everyone
               </Center>
             </Stack>
             <Spacer />
-            <Image src='/images/home1.png' boxSize='50px' alt='logo' />
+            <Image src='/images/code-demo-1.png' boxSize='50px' alt='logo' />
           </Flex>
           <Spacer />
         </Stack>
 
-        <Stack w='full' h='calc(100vh)' justify='center'>
-          <Spacer />
-          <Flex>
-            <Image src='/images/home1.png' boxSize='50px' alt='logo' />
-            <Spacer />
-            <Stack>
-              <Center className={styles['home-page-h2']}>
-                Smart Contract made easy!
-              </Center>
-              <Center className={styles['p']}>
-                a web based IDE for everyone
-              </Center>
-            </Stack>
-          </Flex>
-          <Spacer />
-        </Stack>
-
-        <Stack w='full' h='calc(100vh)' justify='center'>
-          <Spacer />
-          <Center>Smart Contract made easy!</Center>
+        <Stack w='full' h='calc(100vh)' justify='center' padding='20'>
+          <Stack justify='left'>
+            <Text className={styles['p']}>deploy token</Text>
+          </Stack>
+          <Flex></Flex>
+          <Stack>
+            <Text className={styles['p']}>deploy NFT</Text>
+          </Stack>
+          <Flex></Flex>
           <Spacer />
 
           <Center>
-            <Box marginBottom={4} color='white'>
+            <Box>
               <a
                 href='https://twitter.com/MetacampDAO'
                 target='_blank'
                 rel='noopener noreferrer'
+                className={styles['p']}
               >
                 built @metacamp
               </a>

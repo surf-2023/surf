@@ -44,7 +44,7 @@ export default function WithSubnavigation() {
           justify={{ base: 'center', md: 'start' }}
           align='center'
         >
-          <Image src='/images/logo.png' boxSize='50px' alt='logo' />
+          <Image src='/images/logo.png' boxSize='20%' alt='logo' />
           {/* <Spacer /> */}
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
             <DesktopNav />
