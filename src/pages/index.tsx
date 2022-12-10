@@ -6,7 +6,7 @@ import Head from 'next/head';
 // import { connected } from "process"
 import styles from '../styles/Home.module.css';
 
-import NavBar from '../components/NavBar';
+import WithSubnavigation from '@/components/NavBar';
 
 const Home: NextPage = () => {
   const { connected } = useWallet();
@@ -25,7 +25,7 @@ const Home: NextPage = () => {
         backgroundPosition='center'
       >
         <Stack w='full' h='calc(100vh)' justify='center'>
-          <NavBar />
+          <WithSubnavigation />
 
           <Spacer />
           <Center></Center>
