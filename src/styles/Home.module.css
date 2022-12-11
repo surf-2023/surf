@@ -1,6 +1,8 @@
 .container {
   background: #000200;
+  padding: 0 2em;
 }
+
 .wallet-adapter-button-trigger {
   box-sizing: border-box;
   background: #2a251d;

@@ -24,7 +24,7 @@ const WalletMultiButtonDynamic = dynamic(
   { ssr: false }
 );
 
-export default function WithSubnavigation() {
+export default function NavBar() {
   return (
     <Box>
       <Flex
@@ -167,7 +167,7 @@ interface NavItem {
 const NAV_ITEMS: Array<NavItem> = [
   {
     label: 'SurfBoard',
-    href: '#',
+    href: '/code/index',
   },
   {
     label: 'Docs',
@@ -180,7 +180,7 @@ const NAV_ITEMS: Array<NavItem> = [
       {
         label: 'Meet Rust',
         subLabel: 'An exclusive list for contract work',
-        href: '#',
+        href: '/docs/index',
       },
     ],
   },
