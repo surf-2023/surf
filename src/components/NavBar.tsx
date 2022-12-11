@@ -28,7 +28,7 @@ export default function NavBar() {
   return (
     <Box>
       <Flex
-        bg='#FFB016'
+        bg='#ad7404'
         color={useColorModeValue('gray.600', 'white')}
         minH='60px'
         py={{ base: 1 }}
@@ -68,7 +68,7 @@ export default function NavBar() {
 }
 
 const DesktopNav = () => {
-  const linkColor = useColorModeValue('gray.600', 'gray.200');
+  const linkColor = useColorModeValue('black', 'gray.200');
   const linkHoverColor = useColorModeValue('gray.800', 'white');
   const popoverContentBgColor = useColorModeValue('white', 'gray.800');
 

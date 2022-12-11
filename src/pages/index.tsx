@@ -29,7 +29,7 @@ const Home: NextPage = () => {
           w='full'
           h='calc(100vh)'
           justify='center'
-          bgSize='70%'
+          bgSize='90%'
           bgImage="url('/images/home-page-1.png')"
           bgRepeat='no-repeat'
           bgPosition='center'
@@ -40,13 +40,24 @@ const Home: NextPage = () => {
 
           <Box h='calc(20vh)'></Box>
           <Center className={styles['home-page-h1']}>
-            <Text className={styles['gradient']}>Smart Contract made easy</Text>
+            <Text className={styles['gradient1']}>
+              Smart Contract made easy
+            </Text>
           </Center>
           <Center className={styles['p']}>a web based IDE for everyone</Center>
           <Spacer />
         </Stack>
 
-        <Stack w='full' h='calc(100vh)' justify='center' padding='40'>
+        <Stack
+          w='full'
+          h='calc(100vh)'
+          justify='center'
+          padding='40'
+          bgSize='70%'
+          bgImage="url('/images/home-page-2.png')"
+          bgRepeat='no-repeat'
+          bgPosition='left'
+        >
           <Spacer />
           <HStack>
             <Image
@@ -56,12 +67,12 @@ const Home: NextPage = () => {
               data-aos='fade-up'
             />
             <Spacer></Spacer>
-            <Stack w='50%' align='center'>
+            <Stack w='50%' align='center' data-aos='fade-in'>
               <Text className={styles['home-page-h2']}>
                 Deploy smart contracts
               </Text>
               <Text className={styles['home-page-h2']}>
-                <span className={styles['gradient']}>faster</span>&nbsp;than
+                <span className={styles['gradient2']}>faster</span>&nbsp;than
                 ever
               </Text>
               <Text w='80%' className={styles['p']}>
@@ -74,13 +85,22 @@ const Home: NextPage = () => {
           <Spacer />
         </Stack>
 
-        <Stack w='full' h='calc(100vh)' justify='center' padding='40'>
+        <Stack
+          w='full'
+          h='calc(100vh)'
+          justify='center'
+          padding='40'
+          bgSize='70%'
+          bgImage="url('/images/home-page-3.png')"
+          bgRepeat='no-repeat'
+          bgPosition='right'
+        >
           <Spacer />
           <HStack>
             <Stack w='50%' align='center'>
               <Text className={styles['home-page-h2']}>
                 Easier learning with
-                <span className={styles['gradient']}>&nbsp;better UI</span>
+                <span className={styles['gradient3']}>&nbsp;better UI</span>
               </Text>
               <Text w='80%' className={styles['p']}>
                 As an educator, Surf utilises detailed explanations and visuals
@@ -100,7 +120,16 @@ const Home: NextPage = () => {
           <Spacer />
         </Stack>
 
-        <Stack w='full' h='calc(100vh)' justify='center' padding='40'>
+        <Stack
+          w='full'
+          h='calc(100vh)'
+          justify='center'
+          padding='40'
+          bgSize='70%'
+          bgImage="url('/images/home-page-2.png')"
+          bgRepeat='no-repeat'
+          bgPosition='left'
+        >
           <Spacer />
           <HStack>
             <Image
@@ -112,8 +141,11 @@ const Home: NextPage = () => {
             <Spacer></Spacer>
             <Stack w='50%' align='center'>
               <Text className={styles['home-page-h2']}>
-                Develop with{' '}
-                <span className={styles['gradient']}>&nbsp;AI</span>
+                <span className={styles['gradient2']}>AI&nbsp;</span>
+                assistant
+              </Text>
+              <Text className={styles['home-page-h2']}>
+                always on your side
               </Text>
 
               <Text w='80%' className={styles['p']}>
