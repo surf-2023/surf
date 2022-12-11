@@ -1,8 +1,11 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 
 import styles from '../../styles/Home.module.css';
 
 const InitialPrompt: FC = ({ setCurrPrompt, setPayload }) => {
+  useEffect(() => {
+    setPayload({});
+  }, [setPayload]);
   return (
     <div>
       <div>What type of smart contract would you like to create?</div>
