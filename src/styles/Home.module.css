@@ -43,14 +43,29 @@
   font-family: 'Mona Sans', sans-serif;
   font-style: normal;
   font-weight: 900;
-  font-size: 70px;
+  font-size: 80px;
   line-height: 80px;
   color: #ffffff;
   margin: 0;
 }
 
-.gradient {
+.gradient1 {
+  background: radial-gradient(#ec9f05 10%, #ffffff 110%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.gradient2 {
   background: linear-gradient(90deg, #eca418 1.49%, #ffffff 107.28%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.gradient3 {
+  background: linear-gradient(-90deg, #eca418 1.49%, #ffffff 107.28%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -75,6 +90,7 @@
   line-height: 56px;
   color: #ffffff;
   margin: auto;
+  text-align: center;
 }
 
 .code-page-file-explorer {
