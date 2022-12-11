@@ -6,6 +6,11 @@ const SummaryPrompt: FC = ({ setCurrPrompt, payload }) => {
   return (
     <div className={styles['code-page-storage-prompt']}>
       <div>Prompt chosen: {payload.template}</div>
+      {payload.template == 'Free Writing' && (
+        <>
+          <div>{payload.text}</div>
+        </>
+      )}
       {payload.template == 'Simple Storage' && (
         <>
           <div>Name of database: {payload.name}</div>
@@ -27,12 +32,30 @@ const SummaryPrompt: FC = ({ setCurrPrompt, payload }) => {
           <div>User B Tokens: {payload.tokenB}</div>
         </>
       )}
-      <button
-        className={styles['code-page-prompt-proceed-button']}
-        onClick={() => setCurrPrompt('initial')}
-      >
-        Back To Suggested Prompts
-      </button>
+      <div className={styles['code-page-prompt-button-container']}>
+        <button
+          onClick={() => {
+            let newPath = '';
+            if (payload.template == 'Simple Storage') {
+              newPath = 'storage';
+            } else if (payload.template == 'escrow') {
+              newPath = 'escrow';
+            } else {
+              newPath = 'written';
+            }
+            setCurrPrompt(newPath);
+          }}
+          className={styles['code-page-prompt-proceed-button']}
+        >
+          Edit
+        </button>
+        <button
+          className={styles['code-page-prompt-proceed-button']}
+          onClick={() => setCurrPrompt('initial')}
+        >
+          Back To Suggested Prompts
+        </button>
+      </div>
     </div>
   );
 };
