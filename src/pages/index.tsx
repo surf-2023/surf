@@ -34,10 +34,7 @@ const Home: NextPage = () => {
           bgRepeat='no-repeat'
           bgPosition='center'
         >
-          <Center>
-            <NavBar />
-          </Center>
-
+          <NavBar />
           <Box h='calc(20vh)'></Box>
           <Center className={styles['home-page-h1']}>
             <Text className={styles['gradient1']}>
