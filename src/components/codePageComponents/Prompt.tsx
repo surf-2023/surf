@@ -1,22 +1,28 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, useEffect } from 'react';
 
 import styles from '../../styles/Home.module.css';
 
-import EscrowPrompt from './EscrowPrompt';
 import InitialPrompt from './InitialPrompt';
 import StoragePrompt from './StoragePrompt';
 import SummaryPrompt from './SummaryPrompt';
 import WrittenPrompt from './WrittenPrompt';
 
-const Prompt: FC = ({ isWritten }) => {
-  const [currPrompt, setCurrPrompt] = useState('initial');
-  const [payload, setPayload] = useState({});
+const Prompt: FC = ({
+  currPrompt,
+  setCurrPrompt,
+  isWritten,
+  setIsWritten,
+  setPayload,
+  payload,
+}) => {
   useEffect(() => {
     if (isWritten) {
       setCurrPrompt('written');
     } else {
       setCurrPrompt('initial');
     }
+
+    //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isWritten]);
   return (
     <div className={styles['code-page-prompt']}>
@@ -24,6 +30,7 @@ const Prompt: FC = ({ isWritten }) => {
         <WrittenPrompt
           setCurrPrompt={setCurrPrompt}
           setPayload={setPayload}
+          setIsWritten={setIsWritten}
           payload={payload}
         />
       )}
@@ -37,20 +44,20 @@ const Prompt: FC = ({ isWritten }) => {
           payload={payload}
         />
       )}
-      {currPrompt == 'escrow' && (
-        <EscrowPrompt
-          setCurrPrompt={setCurrPrompt}
-          setPayload={setPayload}
-          payload={payload}
-        />
-      )}
       {currPrompt == 'summary' && (
         <SummaryPrompt setCurrPrompt={setCurrPrompt} payload={payload} />
       )}
-      {(currPrompt == 'vesting' || currPrompt == 'token') && (
+      {(currPrompt == 'vesting' ||
+        currPrompt == 'token' ||
+        currPrompt == 'escrow') && (
         <div>
           <div>Feature Coming Soon!</div>
-          <button onClick={() => setCurrPrompt('initial')}>Back</button>
+          <button
+            className={styles['code-page-prompt-button']}
+            onClick={() => setCurrPrompt('initial')}
+          >
+            Back
+          </button>
         </div>
       )}
     </div>
