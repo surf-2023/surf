@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import styles from '../../styles/Home.module.css';
 
@@ -11,6 +11,37 @@ import NavBar from '@/components/NavBar';
 
 const CodePage: NextPage = () => {
   const [isWritten, setIsWritten] = useState(false);
+  const [payload, setPayload] = useState({});
+  const [returnedCode, setReturnedCode] = useState('');
+  const [currPrompt, setCurrPrompt] = useState('initial');
+  useEffect(() => {
+    if (currPrompt == 'summary') {
+      getCode();
+    }
+    //eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [payload]);
+  const getCode = async () => {
+    let res;
+    if (payload.template == 'Simple Storage') {
+      const dbname = payload.name;
+      const attrnames = payload.attributes.reduce(
+        (prev, curr) => prev + ',' + curr.name,
+        ''
+      );
+      const attrtypes = payload.attributes.reduce(
+        (prev, curr) => prev + ',' + curr.type,
+        ''
+      );
+      res = await fetch(
+        '/api/simplestorage?' +
+          new URLSearchParams({ dbname, attrnames, attrtypes })
+      );
+    } else if (payload.template == 'Free Writing') {
+      res = await fetch('/api/escrow');
+    }
+    const response = await res.json();
+    setReturnedCode(response.code);
+  };
   return (
     <div className={styles['code-page-background']}>
       <NavBar />
@@ -20,9 +51,17 @@ const CodePage: NextPage = () => {
             <FileExplorer />
             <Diagram />
           </div>
-          <Prompt isWritten={isWritten} />
+          <Prompt
+            isWritten={isWritten}
+            setIsWritten={setIsWritten}
+            payload={payload}
+            setPayload={setPayload}
+            getCode={getCode}
+            currPrompt={currPrompt}
+            setCurrPrompt={setCurrPrompt}
+          />
         </div>
-        <CodeWindow />
+        <CodeWindow code={returnedCode} />
       </div>
       <div className={styles['code-page-bottom']}>
         <button
