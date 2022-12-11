@@ -44,7 +44,10 @@ const Home: NextPage = () => {
               Smart Contract made easy
             </Text>
           </Center>
-          <Center className={styles['p']}>a web based IDE for everyone</Center>
+          <Center className={styles['p']}>
+            a web based IDE for everyone<br></br>
+            🏄🏄 built by Surfteam
+          </Center>
           <Spacer />
         </Stack>
 

@@ -44,13 +44,13 @@
   font-style: normal;
   font-weight: 900;
   font-size: 80px;
-  line-height: 80px;
+  line-height: 100px;
   color: #ffffff;
   margin: 0;
 }
 
 .gradient1 {
-  background: radial-gradient(#ec9f05 10%, #ffffff 110%);
+  background: radial-gradient(#ffbd3a 10%, #977021 110%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -58,14 +58,14 @@
 }
 
 .gradient2 {
-  background: linear-gradient(90deg, #eca418 1.49%, #ffffff 107.28%);
+  background: linear-gradient(90deg, #ffbd3a 1.49%, #977021 107.28%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
 }
 .gradient3 {
-  background: linear-gradient(-90deg, #eca418 1.49%, #ffffff 107.28%);
+  background: linear-gradient(-90deg, #ffbd3a 1.49%, #977021 107.28%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
