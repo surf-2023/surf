@@ -2,7 +2,12 @@ import { FC, useEffect, useState } from 'react';
 
 import styles from '../../styles/Home.module.css';
 
-const WrittenPrompt: FC = ({ setCurrPrompt, setPayload, payload }) => {
+const WrittenPrompt: FC = ({
+  setCurrPrompt,
+  setPayload,
+  payload,
+  setIsWritten,
+}) => {
   const [text, setText] = useState(
     payload.text == undefined ? '' : payload.text
   );
@@ -19,7 +24,7 @@ const WrittenPrompt: FC = ({ setCurrPrompt, setPayload, payload }) => {
       ></textarea>
       <div className={styles['code-page-written-prompt-button-container']}>
         <button
-          onClick={() => setCurrPrompt('initial')}
+          onClick={() => setIsWritten(false)}
           className={styles['code-page-prompt-button']}
         >
           Back

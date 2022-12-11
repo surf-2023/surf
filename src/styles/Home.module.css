@@ -250,6 +250,15 @@
   margin-left: 20px;
 }
 
+.code-page-code {
+  overflow: auto;
+  height: 100%;
+}
+
+.code-page-code-window {
+  height: 90vh;
+}
+
 .docs-page-container {
   display: grid;
   grid-template-columns: 3fr 12fr 4fr;
