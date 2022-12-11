@@ -122,10 +122,11 @@
 
 .code-page-background,
 .docs-page-background {
+  display: flex;
+  flex-direction: column;
   background: #1f1f1f;
   /* background-color: #3e3e3e; */
-  height: 100vh;
-  width: 100vw;
+  height: 110vh;
 }
 
 .code-page-prompt-input,
@@ -141,11 +142,13 @@
 }
 
 .code-page-prompt-input:focus,
-.code-page-storage-select:focus {
+.code-page-storage-select:focus,
+.code-page-written-prompt:focus {
   outline: none;
 }
 
 .code-page-storage-prompt {
+  height: 100%;
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -169,19 +172,56 @@
 
 .code-page-prompt-proceed-button,
 .code-page-prompt-button,
-.code-page-entry-row-right-button {
+.code-page-entry-row-right-button,
+.code-page-toggle-button,
+.code-page-toggle-button-active {
   border: 1px solid #ffb016;
   padding: 5px 10px 5px 10px;
   color: #ffb016;
 }
 
-.code-page-prompt-proceed-button {
-  align-self: flex-end;
+.code-page-toggle-button-active,
+.code-page-toggle-button {
+  margin: 20px;
 }
 
+.code-page-written-prompt {
+  background: #1f1f1f;
+  border: 1px solid #ffb016;
+  padding: 20px;
+  resize: none;
+  height: 70%;
+  width: 100%;
+}
+
+.code-page-written-prompt-button-container {
+  display: flex;
+  gap: 20px;
+  align-self: flex-end;
+  padding-top: 20px;
+}
+
+.code-page-prompt-button-container {
+  align-self: flex-end;
+  display: flex;
+  gap: 20px;
+}
+
+.code-page-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.code-page-button-container {
+  padding: 0px 20px 20px 20px;
+  align-self: flex-end;
+  display: flex;
+  gap: 20px;
+}
 .code-page-prompt-button:hover,
 .code-page-prompt-proceed-button:hover,
-.code-page-entry-row-right-button:hover {
+.code-page-entry-row-right-button:hover,
+.code-page-toggle-button-active {
   color: #1f1f1f;
   background-color: #ffb016;
 }

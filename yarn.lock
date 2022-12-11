@@ -2206,6 +2206,16 @@
   "version" "5.1.0"
   dependencies:
     "@hapi/hoek" "^9.0.0"
+<<<<<<< HEAD
+=======
+
+"@headlessui/react@^1.7.5":
+  "integrity" "sha512-UZSxOfA0CYKO7QDT5OGlFvesvlR1SKkawwSjwQJwt7XQItpzRKdE3ZUQxHcg4LEz3C0Wler2s9psdb872ynwrQ=="
+  "resolved" "https://registry.npmjs.org/@headlessui/react/-/react-1.7.5.tgz"
+  "version" "1.7.5"
+  dependencies:
+    "client-only" "^0.0.1"
+>>>>>>> 45b7da37e9eb865e8de444443267373dfdf30813
 
 "@humanwhocodes/config-array@^0.11.6":
   "integrity" "sha512-kBbPWzN8oVMLb0hOUYXhmxggL/1cJE6ydvjDIGi9EnAGUyA7cLVKQg+d/Dsm+KZwx2czGHrCmMVLiyg8s5JPKw=="
@@ -3943,11 +3953,14 @@
   "integrity" "sha512-eZxlbI8GZscaGS7kkc/trHTT5xgrjH3/1n2JDwusC9iahPKWMRvRjJSAN5mCXviuTGQ/lHnhvv8Q1YTpnfz9gA=="
   "resolved" "https://registry.npmjs.org/@tsconfig/node16/-/node16-1.0.2.tgz"
   "version" "1.0.2"
+<<<<<<< HEAD
 
 "@types/aos@^3.0.4":
   "integrity" "sha512-mna6Jd6bdK1NpwarLopGvXOgUoCfj0470IwLxuVOFDElTGI0JTd7xSGQ0AjbAEnHErC/b3fA9t2uB3IXVKmckA=="
   "resolved" "https://registry.npmjs.org/@types/aos/-/aos-3.0.4.tgz"
   "version" "3.0.4"
+=======
+>>>>>>> 45b7da37e9eb865e8de444443267373dfdf30813
 
 "@types/aria-query@^4.2.0":
   "integrity" "sha512-HnYpAE1Y6kRyKM/XkEuiRQhTHvkzMBurTHnpFLYLBGPIylZNPs9jJcuOOYWxPLJCSEtmZT0Y8rHDokKN7rRTig=="
@@ -4681,6 +4694,7 @@
     "normalize-path" "^3.0.0"
     "picomatch" "^2.0.4"
 
+<<<<<<< HEAD
 "aos@^3.0.0-beta.6":
   "integrity" "sha512-VLWrpq8bfAWcetynVHMMrqdC+89Qq/Ym6UBJbHB4crIwp3RR8uq1dNGgsFzoDl03S43rlVMK+na3r5+oUCZsYw=="
   "resolved" "https://registry.npmjs.org/aos/-/aos-3.0.0-beta.6.tgz"
@@ -4690,6 +4704,8 @@
     "lodash.debounce" "^4.0.8"
     "lodash.throttle" "^4.1.1"
 
+=======
+>>>>>>> 45b7da37e9eb865e8de444443267373dfdf30813
 "appdirsjs@^1.2.4":
   "integrity" "sha512-Quji6+8kLBC3NnBeo14nPDq0+2jUs5s3/xEye+udFHumHhRk4M7aAMXp/PBJqkKYGuuyR9M/6Dq7d2AViiGmhw=="
   "resolved" "https://registry.npmjs.org/appdirsjs/-/appdirsjs-1.2.7.tgz"
@@ -5604,11 +5620,14 @@
     "isobject" "^3.0.0"
     "static-extend" "^0.1.1"
 
+<<<<<<< HEAD
 "classlist-polyfill@^1.2.0":
   "integrity" "sha512-GzIjNdcEtH4ieA2S8NmrSxv7DfEV5fmixQeyTmqmRmRJPGpRBaSnA2a0VrCjyT8iW8JjEdMbKzDotAJf+ajgaQ=="
   "resolved" "https://registry.npmjs.org/classlist-polyfill/-/classlist-polyfill-1.2.0.tgz"
   "version" "1.2.0"
 
+=======
+>>>>>>> 45b7da37e9eb865e8de444443267373dfdf30813
 "clean-stack@^2.0.0":
   "integrity" "sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A=="
   "resolved" "https://registry.npmjs.org/clean-stack/-/clean-stack-2.2.0.tgz"
@@ -5642,7 +5661,11 @@
     "slice-ansi" "^5.0.0"
     "string-width" "^5.0.0"
 
+<<<<<<< HEAD
 "client-only@0.0.1":
+=======
+"client-only@^0.0.1", "client-only@0.0.1":
+>>>>>>> 45b7da37e9eb865e8de444443267373dfdf30813
   "integrity" "sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA=="
   "resolved" "https://registry.npmjs.org/client-only/-/client-only-0.0.1.tgz"
   "version" "0.0.1"
