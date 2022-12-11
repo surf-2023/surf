@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
+// http://localhost:3000/api/simplestorage?dbname=Movie&attrnames=title,rating,description&attrtypes=String,u32,String
 export default async function hello(req: NextApiRequest, res: NextApiResponse) {
   const { dbname, attrnames, attrtypes } = req.query;
   const DBNAME = dbname as string;
