@@ -28,7 +28,7 @@ export default function WithSubnavigation() {
   return (
     <Box>
       <Flex
-        bg={useColorModeValue('white', 'gray.800')}
+        bg='#FFB016'
         color={useColorModeValue('gray.600', 'white')}
         minH='60px'
         py={{ base: 1 }}
@@ -167,23 +167,7 @@ interface NavItem {
 const NAV_ITEMS: Array<NavItem> = [
   {
     label: 'SurfBoard',
-    children: [
-      {
-        label: 'Learning',
-        subLabel: 'Guided by AI',
-        href: '#',
-      },
-      {
-        label: 'Developing',
-        subLabel: 'Straight to the workspace',
-        href: '#',
-      },
-      {
-        label: 'Smart Contracts Guide Book?',
-        subLabel: 'templates?',
-        href: '#',
-      },
-    ],
+    href: '#',
   },
   {
     label: 'Docs',

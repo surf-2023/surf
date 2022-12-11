@@ -2,6 +2,7 @@ import {
   Box,
   Center,
   Flex,
+  HStack,
   Image,
   Spacer,
   Stack,
@@ -45,45 +46,47 @@ const Home: NextPage = () => {
           <Spacer />
         </Stack>
 
-        <Stack w='full' h='calc(100vh)' justify='center' padding='20'>
+        <Stack w='full' h='calc(100vh)' justify='center' padding='40'>
           <Spacer />
-          <Flex>
-            <Image src='/images/code-demo-1.png' boxSize='50px' alt='logo' />
-            <Spacer />
-            <Stack>
-              <Center className={styles['home-page-h2']}>
+          <HStack>
+            <Image src='/images/code-demo-1.png' w='40%' alt='logo' />
+            <Spacer></Spacer>
+            <Stack w='50%' align='center'>
+              <Text className={styles['home-page-h2']}>
                 Deploy smart contracts
-              </Center>
-              <Center className={styles['home-page-h2']}>
+              </Text>
+              <Text className={styles['home-page-h2']}>
                 <span className={styles['gradient']}>faster</span>&nbsp;than
                 ever
-              </Center>
-              <Center className={styles['p']}>
-                a web based IDE for everyone
-              </Center>
+              </Text>
+              <Text w='80%' className={styles['p']}>
+                As an enabler, Surf simplifies the Smart Contract creation
+                process to just a few prompts, for you to instantly deploy them
+                on the blockchain without knowing anything about coding.
+              </Text>
             </Stack>
-          </Flex>
+          </HStack>
           <Spacer />
         </Stack>
 
-        <Stack w='full' h='calc(100vh)' justify='center' padding='20'>
+        <Stack w='full' h='calc(100vh)' justify='center' padding='40'>
           <Spacer />
-          <Flex>
-            <Stack>
-              <Center className={styles['home-page-h2']}>
-                Learn and develop
-              </Center>
-              <Center className={styles['home-page-h2']}>
+          <HStack>
+            <Stack w='50%' align='center'>
+              <Text className={styles['home-page-h2']}>Learn and develop</Text>
+              <Text className={styles['home-page-h2']}>
                 together with{' '}
                 <span className={styles['gradient']}>&nbsp;AI</span>
-              </Center>
-              <Center className={styles['p']}>
-                a web based IDE for everyone
-              </Center>
+              </Text>
+              <Text w='80%' className={styles['p']}>
+                As an enabler, Surf simplifies the Smart Contract creation
+                process to just a few prompts, for you to instantly deploy them
+                on the blockchain without knowing anything about coding.
+              </Text>
             </Stack>
-            <Spacer />
-            <Image src='/images/code-demo-1.png' boxSize='50px' alt='logo' />
-          </Flex>
+            <Spacer></Spacer>
+            <Image src='/images/code-demo-1.png' w='40%' alt='logo' />
+          </HStack>
           <Spacer />
         </Stack>
 
