@@ -253,10 +253,14 @@
 .code-page-code {
   overflow: auto;
   height: 100%;
+  width: 100%;
+  background: #1f1f1f;
 }
 
 .code-page-code-window {
   height: 90vh;
+  width: 50vw;
+  padding: 0px;
 }
 
 .docs-page-container {

@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import { useEffect, useState } from 'react';
+import CopyToClipboard from 'react-copy-to-clipboard';
 
 import styles from '../../styles/Home.module.css';
 
@@ -75,8 +76,21 @@ const CodePage: NextPage = () => {
           {isWritten ? 'Go to Suggested Prompts' : 'Go to Free Writing'}
         </button>
         <div className={styles['code-page-button-container']}>
-          <button className={styles['code-page-prompt-button']}>Export</button>
-          <button className={styles['code-page-prompt-button']}>Deploy</button>
+          {returnedCode != '' && (
+            <>
+              <CopyToClipboard
+                text={returnedCode}
+                onCopy={() => alert('Successfully copied!')}
+              >
+                <button className={styles['code-page-prompt-button']}>
+                  Export
+                </button>
+              </CopyToClipboard>
+              <button className={styles['code-page-prompt-button']}>
+                Deploy
+              </button>
+            </>
+          )}
         </div>
       </div>
     </div>
