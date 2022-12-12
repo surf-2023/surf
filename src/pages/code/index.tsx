@@ -25,14 +25,24 @@ const CodePage: NextPage = () => {
     let res;
     if (payload.template == 'Simple Storage') {
       const dbname = payload.name;
+      const attrnames = payload.attributes.map((x) => x.name).join(',');
+
+      /*
       const attrnames = payload.attributes.reduce(
         (prev, curr) => prev + ',' + curr.name,
         ''
       );
+      */
+
+      const attrtypes = payload.attributes.map((x) => x.type).join(',');
+
+      /*
       const attrtypes = payload.attributes.reduce(
         (prev, curr) => prev + ',' + curr.type,
         ''
       );
+      */
+
       res = await fetch(
         '/api/simplestorage?' +
           new URLSearchParams({ dbname, attrnames, attrtypes })
