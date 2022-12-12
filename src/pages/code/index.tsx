@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import { useEffect, useState } from 'react';
+import CopyToClipboard from 'react-copy-to-clipboard';
 
 import styles from '../../styles/Home.module.css';
 
@@ -24,14 +25,24 @@ const CodePage: NextPage = () => {
     let res;
     if (payload.template == 'Simple Storage') {
       const dbname = payload.name;
+      const attrnames = payload.attributes.map((x) => x.name).join(',');
+
+      /*
       const attrnames = payload.attributes.reduce(
         (prev, curr) => prev + ',' + curr.name,
         ''
       );
+      */
+
+      const attrtypes = payload.attributes.map((x) => x.type).join(',');
+
+      /*
       const attrtypes = payload.attributes.reduce(
         (prev, curr) => prev + ',' + curr.type,
         ''
       );
+      */
+
       res = await fetch(
         '/api/simplestorage?' +
           new URLSearchParams({ dbname, attrnames, attrtypes })
@@ -75,8 +86,21 @@ const CodePage: NextPage = () => {
           {isWritten ? 'Go to Suggested Prompts' : 'Go to Free Writing'}
         </button>
         <div className={styles['code-page-button-container']}>
-          <button className={styles['code-page-prompt-button']}>Export</button>
-          <button className={styles['code-page-prompt-button']}>Deploy</button>
+          {returnedCode != '' && (
+            <>
+              <CopyToClipboard
+                text={returnedCode}
+                onCopy={() => alert('Successfully copied!')}
+              >
+                <button className={styles['code-page-prompt-button']}>
+                  Export
+                </button>
+              </CopyToClipboard>
+              <button className={styles['code-page-prompt-button']}>
+                Deploy
+              </button>
+            </>
+          )}
         </div>
       </div>
     </div>
