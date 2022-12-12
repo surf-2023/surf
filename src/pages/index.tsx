@@ -37,8 +37,11 @@ const Home: NextPage = () => {
           <NavBar />
           <Box h='calc(20vh)'></Box>
           <Center className={styles['home-page-h1']}>
-            <Text className={styles['gradient1']}>
-              Smart Contract made easy
+            <Text textAlign='center'>
+              Smart Contract{' '}
+              <span className={styles['gradient1']}>made easy</span>
+              <br></br>
+              with Surf
             </Text>
           </Center>
           <Center className={styles['p']}>
@@ -98,8 +101,8 @@ const Home: NextPage = () => {
           <Spacer />
           <HStack>
             <Stack w='50%' align='center'>
-              <Text className={styles['home-page-h2']}>
-                Easier learning with
+              <Text className={styles['home-page-h2']} textAlign='center'>
+                Easier learning with <br></br>
                 <span className={styles['gradient3']}>&nbsp;better UI</span>
               </Text>
               <Text w='80%' className={styles['p']}>

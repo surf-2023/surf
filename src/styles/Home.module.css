@@ -40,17 +40,20 @@
 }
 
 .home-page-h1 {
-  font-family: 'Mona Sans', sans-serif;
+  font-family: 'Mona Sans', 'Mona Sans Header Fallback', -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   font-style: normal;
-  font-weight: 900;
+  font-weight: 800;
   font-size: 80px;
-  line-height: 100px;
+  line-height: 85px;
+  letter-spacing: 0px;
   color: #ffffff;
   margin: 0;
 }
 
 .gradient1 {
-  background: radial-gradient(#ffbd3a 10%, #977021 110%);
+  background: linear-gradient(90deg, #ffffff 10%, #ebbe64 50%, #e5aa35 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -73,7 +76,9 @@
 }
 
 .home-page-h2 {
-  font-family: 'Mona Sans', sans-serif;
+  font-family: 'Mona Sans', 'Mona Sans Header Fallback', -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   font-style: normal;
   font-weight: 900;
   font-size: 40px;
@@ -83,12 +88,14 @@
 }
 
 .p {
-  font-family: 'Mona Sans', sans-serif;
+  font-family: 'Mona Sans', 'Mona Sans Header Fallback', -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   font-style: normal;
-  font-weight: 900;
+  font-weight: 400;
   font-size: 20px;
   line-height: 56px;
-  color: #ffffff;
+  color: #8b949e;
   margin: auto;
   text-align: center;
 }
