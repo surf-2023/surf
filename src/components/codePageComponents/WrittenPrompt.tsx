@@ -34,6 +34,9 @@ const WrittenPrompt: FC = ({
             if (text.length == '') {
               alert('Invalid Input: Text must be non-empty');
               return;
+            } else if (!(text.includes('vesting') || text.includes('escrow'))) {
+              alert('Prompt could not be interpreted');
+              return;
             }
             setPayload((prev) => ({ ...prev, text }));
             setCurrPrompt('summary');

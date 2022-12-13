@@ -48,7 +48,10 @@ const CodePage: NextPage = () => {
           new URLSearchParams({ dbname, attrnames, attrtypes })
       );
     } else if (payload.template == 'Free Writing') {
-      res = await fetch('/api/escrow');
+      const endpoint = payload.text.includes('escrow')
+        ? '/api/escrow'
+        : '/api/vesting';
+      res = await fetch(endpoint);
     }
     const response = await res.json();
     setReturnedCode(response.code);
