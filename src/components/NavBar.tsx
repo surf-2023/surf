@@ -28,17 +28,18 @@ export default function NavBar() {
   return (
     <Box>
       <Flex
-        bg='#ad7404'
+        // bg='#ad7404'
+        bg='#ffb016'
         color={useColorModeValue('gray.600', 'white')}
         minH='60px'
         py={{ base: 1 }}
         px={{ base: 4 }}
-        borderBottom={1}
+        // borderBottom={1}
         borderStyle='solid'
         borderColor={useColorModeValue('gray.200', 'gray.900')}
         align='center'
-        borderBottomRadius='5'
-        border='3px solid #000000'
+        // borderBottomRadius='5'
+        // border='3px solid #000000'
       >
         <Flex
           flex={{ base: 1 }}
