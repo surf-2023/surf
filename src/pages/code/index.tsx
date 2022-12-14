@@ -15,6 +15,7 @@ const CodePage: NextPage = () => {
   const [payload, setPayload] = useState({});
   const [returnedCode, setReturnedCode] = useState('');
   const [currPrompt, setCurrPrompt] = useState('initial');
+  const [loadingCode, setIsLoadingCode] = useState(false);
   useEffect(() => {
     if (currPrompt == 'summary') {
       getCode();
@@ -23,6 +24,7 @@ const CodePage: NextPage = () => {
   }, [payload]);
   const getCode = async () => {
     let res;
+    setIsLoadingCode(true);
     if (payload.template == 'Simple Storage') {
       const dbname = payload.name;
       const attrnames = payload.attributes.map((x) => x.name).join(',');
@@ -55,6 +57,7 @@ const CodePage: NextPage = () => {
     }
     const response = await res.json();
     setReturnedCode(response.code);
+    setTimeout(() => setIsLoadingCode(false), 300);
   };
   return (
     <div className={styles['code-page-background']}>
@@ -75,7 +78,7 @@ const CodePage: NextPage = () => {
             setCurrPrompt={setCurrPrompt}
           />
         </div>
-        <CodeWindow code={returnedCode} />
+        <CodeWindow code={returnedCode} loadingCode={loadingCode} />
       </div>
       <div className={styles['code-page-bottom']}>
         <button

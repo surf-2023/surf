@@ -264,6 +264,10 @@
   background: #1f1f1f;
 }
 
+.code-page-loading-screen {
+  padding: 10px;
+}
+
 .code-page-code-window {
   height: 90vh;
   width: 50vw;

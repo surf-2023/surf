@@ -47,14 +47,16 @@ const SummaryPrompt: FC = ({ setCurrPrompt, payload }) => {
           }}
           className={styles['code-page-prompt-proceed-button']}
         >
-          Edit
+          Edit Input
         </button>
-        <button
-          className={styles['code-page-prompt-proceed-button']}
-          onClick={() => setCurrPrompt('initial')}
-        >
-          Back To Suggested Prompts
-        </button>
+        {payload.template == 'Simple Storage' && (
+          <button
+            className={styles['code-page-prompt-proceed-button']}
+            onClick={() => setCurrPrompt('initial')}
+          >
+            Back To Suggested Prompts
+          </button>
+        )}
       </div>
     </div>
   );
