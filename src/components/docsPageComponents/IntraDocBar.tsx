@@ -5,9 +5,7 @@ const IntraDocBar: FC = ({ currDoc }) => {
   return (
     <div className={styles['docs-page-intradocs']}>
       {currDoc.subcontents?.map((subcontent, index) => (
-        <div key={index} onClick={(_) => handleScroll(index)}>
-          {subcontent.heading}
-        </div>
+        <div key={index}>{subcontent.heading}</div>
       ))}
     </div>
   );

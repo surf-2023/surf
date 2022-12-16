@@ -1,3 +1,4 @@
+import { Text } from '@chakra-ui/react';
 import { FC } from 'react';
 
 import styles from '../../styles/Home.module.css';
@@ -15,7 +16,7 @@ type PageContentProps = {
 const PageContent: FC<PageContentProps> = ({ currDoc }) => {
   return (
     <div className={styles['docs-page-content']}>
-      {currDoc.name}
+      <Text className={styles['docs-page-h1']}>{currDoc.name}</Text>
       {currDoc.subcontents?.map((subcontent, index) => (
         <PageSubContent
           heading={subcontent.heading}
