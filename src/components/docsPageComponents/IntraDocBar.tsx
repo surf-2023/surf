@@ -1,7 +1,13 @@
 import { FC } from 'react';
 
 import styles from '../../styles/Home.module.css';
-const IntraDocBar: FC = ({ currDoc }) => {
+
+import { DocsDirectoryType } from '@/pages/docs';
+
+type IntraDocBarProps = {
+  currDoc: DocsDirectoryType;
+};
+const IntraDocBar: FC<IntraDocBarProps> = ({ currDoc }) => {
   return (
     <div className={styles['docs-page-intradocs']}>
       {currDoc.subcontents?.map((subcontent, index) => (

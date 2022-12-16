@@ -8,11 +8,22 @@ import CodeWindow from '@/components/codePageComponents/CodeWindow';
 import Diagram from '@/components/codePageComponents/Diagram';
 import FileExplorer from '@/components/codePageComponents/FileExplorer';
 import Prompt from '@/components/codePageComponents/Prompt';
+import { Attribute } from '@/components/codePageComponents/StoragePromptTwo';
 import NavBar from '@/components/NavBar';
 
+export type Payload = {
+  template: string;
+  name: string;
+  attributes?: Attribute[];
+  text?: string;
+  addressA?: string;
+  addressB?: string;
+  tokenA?: string;
+  tokenB?: string;
+};
 const CodePage: NextPage = () => {
   const [isWritten, setIsWritten] = useState(false);
-  const [payload, setPayload] = useState({});
+  const [payload, setPayload] = useState<Payload>({});
   const [returnedCode, setReturnedCode] = useState('');
   const [currPrompt, setCurrPrompt] = useState('initial');
   const [loadingCode, setIsLoadingCode] = useState(false);
@@ -27,7 +38,7 @@ const CodePage: NextPage = () => {
     setIsLoadingCode(true);
     if (payload.template == 'Simple Storage') {
       const dbname = payload.name;
-      const attrnames = payload.attributes.map((x) => x.name).join(',');
+      const attrnames = payload.attributes?.map((x) => x.name).join(',');
 
       /*
       const attrnames = payload.attributes.reduce(
@@ -36,7 +47,7 @@ const CodePage: NextPage = () => {
       );
       */
 
-      const attrtypes = payload.attributes.map((x) => x.type).join(',');
+      const attrtypes = payload.attributes?.map((x) => x.type).join(',');
 
       /*
       const attrtypes = payload.attributes.reduce(
@@ -50,12 +61,12 @@ const CodePage: NextPage = () => {
           new URLSearchParams({ dbname, attrnames, attrtypes })
       );
     } else if (payload.template == 'Free Writing') {
-      const endpoint = payload.text.includes('escrow')
+      const endpoint = payload.text?.includes('escrow')
         ? '/api/escrow'
         : '/api/vesting';
       res = await fetch(endpoint);
     }
-    const response = await res.json();
+    const response = await res?.json();
     setReturnedCode(response.code);
     setTimeout(() => setIsLoadingCode(false), 300);
   };
@@ -73,7 +84,6 @@ const CodePage: NextPage = () => {
             setIsWritten={setIsWritten}
             payload={payload}
             setPayload={setPayload}
-            getCode={getCode}
             currPrompt={currPrompt}
             setCurrPrompt={setCurrPrompt}
           />

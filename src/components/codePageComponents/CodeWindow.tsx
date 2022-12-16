@@ -4,7 +4,11 @@ import { stackoverflowDark } from 'react-syntax-highlighter/dist/cjs/styles/hljs
 
 import styles from '../../styles/Home.module.css';
 
-const CodeWindow: FC = ({ code, loadingCode }) => {
+type CodeWindowProps = {
+  code: string;
+  loadingCode: boolean;
+};
+const CodeWindow: FC<CodeWindowProps> = ({ code, loadingCode }) => {
   return (
     <div className={styles['code-page-code-window']}>
       {loadingCode && (

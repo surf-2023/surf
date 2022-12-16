@@ -2,7 +2,15 @@ import { FC, useEffect, useState } from 'react';
 
 import styles from '../../styles/Home.module.css';
 
-const WrittenPrompt: FC = ({
+import { Payload } from '@/pages/code';
+
+type WrittenPromptProps = {
+  setCurrPrompt: (prompt: string) => void;
+  setPayload: (payload: Payload) => void;
+  payload: Payload;
+  setIsWritten: (bool: boolean) => void;
+};
+const WrittenPrompt: FC<WrittenPromptProps> = ({
   setCurrPrompt,
   setPayload,
   payload,
@@ -31,7 +39,7 @@ const WrittenPrompt: FC = ({
         </button>
         <button
           onClick={() => {
-            if (text.length == '') {
+            if (text == '') {
               alert('Invalid Input: Text must be non-empty');
               return;
             } else if (!(text.includes('vesting') || text.includes('escrow'))) {

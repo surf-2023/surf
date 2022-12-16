@@ -3,7 +3,16 @@ import { FC } from 'react';
 
 import styles from '../../styles/Home.module.css';
 
-const PageSubContent: FC = ({ heading, content, navigateToDoc }) => {
+type PageSubContentProps = {
+  heading: string;
+  content: string;
+  navigateToDoc: (index: number) => void;
+};
+const PageSubContent: FC<PageSubContentProps> = ({
+  heading,
+  content,
+  navigateToDoc,
+}) => {
   return (
     <div className={styles['docs-page-subcontent']}>
       <Text className={styles['docs-page-h2']}>{heading}</Text>
@@ -45,7 +54,17 @@ const PageSubContent: FC = ({ heading, content, navigateToDoc }) => {
       <div>
         {content.split('\n').map((el, index) => (
           <div key={index} className={styles['docs-page-div']}>
-            {el}
+            {el.includes('Read More') && (
+              <a
+                target='_blank'
+                className={styles['docs-page-link']}
+                href={el.split(' - ')[1]}
+                rel='noreferrer noopener'
+              >
+                {el.split(' - ')[0]}
+              </a>
+            )}
+            {!el.includes('Read More') && el}
           </div>
         ))}
       </div>

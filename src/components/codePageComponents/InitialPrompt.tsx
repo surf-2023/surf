@@ -2,7 +2,16 @@ import { FC, useEffect } from 'react';
 
 import styles from '../../styles/Home.module.css';
 
-const InitialPrompt: FC = ({ setCurrPrompt, setPayload }) => {
+import { Payload } from '@/pages/code';
+
+type InitialPromptProps = {
+  setCurrPrompt: (prompt: string) => void;
+  setPayload: (payload: Payload) => void;
+};
+const InitialPrompt: FC<InitialPromptProps> = ({
+  setCurrPrompt,
+  setPayload,
+}) => {
   useEffect(() => {
     setPayload({});
   }, [setPayload]);

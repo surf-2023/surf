@@ -2,7 +2,18 @@ import { FC, useState } from 'react';
 
 import styles from '../../styles/Home.module.css';
 
-const EscrowPrompt: FC = ({ setCurrPrompt, setPayload, payload }) => {
+import { Payload } from '@/pages/code';
+
+type EscrowPromptProps = {
+  setCurrPrompt: (prompt: string) => void;
+  setPayload: (payload: Payload) => void;
+  payload: Payload;
+};
+const EscrowPrompt: FC<EscrowPromptProps> = ({
+  setCurrPrompt,
+  setPayload,
+  payload,
+}) => {
   const [tokenA, setTokenA] = useState(
     payload.tokenA == undefined ? '' : payload.tokenA
   );
@@ -15,7 +26,8 @@ const EscrowPrompt: FC = ({ setCurrPrompt, setPayload, payload }) => {
   const [addressB, setAddressB] = useState(
     payload.addressB == undefined ? '' : payload.addressB
   );
-  const handleTokenChange = (event, user) => {
+  //eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleTokenChange = (event: any, user: string) => {
     const newValue = event.target.value;
     const regex = new RegExp('^[0-9]*$');
     if (!regex.test(newValue)) {
@@ -28,7 +40,8 @@ const EscrowPrompt: FC = ({ setCurrPrompt, setPayload, payload }) => {
       setTokenB(event.target.value);
     }
   };
-  const handleAddresssChange = (event, user) => {
+  //eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleAddresssChange = (event: any, user: string) => {
     const newValue = event.target.value;
     const regex = new RegExp(
       '^[1-9ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]*$'

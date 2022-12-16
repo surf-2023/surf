@@ -2,7 +2,15 @@ import { FC, useState } from 'react';
 
 import styles from '../../styles/Home.module.css';
 
-const StoragePromptOne: FC = ({
+import { Payload } from '@/pages/code';
+
+type StoragePromptOneProps = {
+  setPart: (bool: boolean) => void;
+  setPayload: (payload: Payload) => void;
+  setCurrPrompt: (prompt: string) => void;
+  payload: Payload;
+};
+const StoragePromptOne: FC<StoragePromptOneProps> = ({
   setPart,
   setPayload,
   setCurrPrompt,

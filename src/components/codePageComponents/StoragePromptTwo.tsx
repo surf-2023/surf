@@ -2,14 +2,22 @@ import { FC, useState } from 'react';
 
 import styles from '../../styles/Home.module.css';
 
+import { Payload } from '@/pages/code';
+
 import StoragePromptTwoRow from './StoragePromptTwoRow';
 
-type Attribute = {
+export type Attribute = {
   name: string;
   type: string;
 };
 
-const StoragePromptTwo: FC = ({
+type StoragePromptTwoProps = {
+  setCurrPrompt: (prompt: string) => void;
+  setPayload: (payload: Payload) => void;
+  setPart: (bool: boolean) => void;
+  payload: Payload;
+};
+const StoragePromptTwo: FC<StoragePromptTwoProps> = ({
   setCurrPrompt,
   setPayload,
   setPart,
@@ -23,7 +31,8 @@ const StoragePromptTwo: FC = ({
         ]
       : payload.attributes
   );
-  const handleInputChange = (event, index, variable) => {
+  //eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleInputChange = (event: any, index: number, variable: string) => {
     const newValue = event.target.value;
     if (variable == 'name' && newValue != '') {
       if (newValue.length > 32) {
@@ -45,7 +54,8 @@ const StoragePromptTwo: FC = ({
         : { ...prev[index], type: newValue };
     setAttributes(prev);
   };
-  const handleDelete = (event, index) => {
+  //eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleDelete = (event: any, index: number) => {
     const prev = [...attributes];
     prev.splice(index, 1);
     setAttributes(prev);

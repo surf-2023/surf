@@ -79,20 +79,21 @@ const docs: DocsDirectoryType[] = [
       {
         heading: 'Rust',
         content: `Rust is a statically-typed programming language designed for performance and safety, especially safe concurrency and memory management. Its syntax is similar to that of C++. It is an open-source project developed originally at Mozilla Research. Rust solves problems that C/C++ developers have been struggling with for a long time: memory errors and concurrent programming.
-            Read More - https://www.rust-lang.org/learn`,
+        Read More - https://www.rust-lang.org/
+            `,
       },
       {
         heading: 'Writing a Smart Contract on Solana (using RUST)',
         content: `
-            1. Install Rust and the Solana CLI (https://moralis.io/how-to-write-a-solana-smart-contract/)\n
+            1. Install Rust and the Solana CLI \n
 
-            2. Create a Rust project using your preferred IDE (https://moralis.io/how-to-write-a-solana-smart-contract/)\n
+            2. Create a Rust project using your preferred IDE \n
 
-            3. Code the Smart Contract (https://moralis.io/how-to-write-a-solana-smart-contract/)\n
+            3. Code the Smart Contract \n
 
-            4. Call the Smart Contract (https://moralis.io/how-to-write-a-solana-smart-contract/)\n
+            4. Call the Smart Contract \n
 
-            For a detailed step by step guide on creating Smart Contracts using RUST, refer to https://moralis.io/how-to-write-a-solana-smart-contract/.
+            Read More - https://moralis.io/how-to-write-a-solana-smart-contract/.
             `,
       },
     ],
@@ -101,7 +102,7 @@ const docs: DocsDirectoryType[] = [
 
 const DocsPage: NextPage = () => {
   const [currDoc, setCurrDoc] = useState<DocsDirectoryType>(docs[0]);
-  const navigateToDoc = (index) => {
+  const navigateToDoc = (index: number) => {
     setCurrDoc(docs[index]);
   };
   return (

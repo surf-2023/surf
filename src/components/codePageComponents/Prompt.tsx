@@ -2,12 +2,22 @@ import { FC, useEffect } from 'react';
 
 import styles from '../../styles/Home.module.css';
 
+import { Payload } from '@/pages/code';
+
 import InitialPrompt from './InitialPrompt';
 import StoragePrompt from './StoragePrompt';
 import SummaryPrompt from './SummaryPrompt';
 import WrittenPrompt from './WrittenPrompt';
 
-const Prompt: FC = ({
+type PromptProps = {
+  currPrompt: string;
+  setCurrPrompt: (prompt: string) => void;
+  isWritten: boolean;
+  setIsWritten: (bool: boolean) => void;
+  setPayload: (payload: Payload) => void;
+  payload: Payload;
+};
+const Prompt: FC<PromptProps> = ({
   currPrompt,
   setCurrPrompt,
   isWritten,

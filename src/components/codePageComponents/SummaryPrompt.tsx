@@ -2,7 +2,13 @@ import { FC } from 'react';
 
 import styles from '../../styles/Home.module.css';
 
-const SummaryPrompt: FC = ({ setCurrPrompt, payload }) => {
+import { Payload } from '@/pages/code';
+
+type SummaryPromptProps = {
+  setCurrPrompt: (prompt: string) => void;
+  payload: Payload;
+};
+const SummaryPrompt: FC<SummaryPromptProps> = ({ setCurrPrompt, payload }) => {
   return (
     <div className={styles['code-page-storage-prompt']}>
       <div>Prompt chosen: {payload.template}</div>
@@ -16,7 +22,7 @@ const SummaryPrompt: FC = ({ setCurrPrompt, payload }) => {
           <div>Name of database: {payload.name}</div>
           <ul>
             Attributes:
-            {payload.attributes.map((attr, index) => (
+            {payload.attributes?.map((attr, index) => (
               <li key={index} className={styles['code-page-attributes-list']}>
                 Name: {attr.name}, Type: {attr.type}
               </li>
