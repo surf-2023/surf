@@ -12,8 +12,9 @@ export type SubContent = {
 };
 type PageContentProps = {
   currDoc: DocsDirectoryType;
+  navigateToDoc: (index: number) => void;
 };
-const PageContent: FC<PageContentProps> = ({ currDoc }) => {
+const PageContent: FC<PageContentProps> = ({ currDoc, navigateToDoc }) => {
   return (
     <div className={styles['docs-page-content']}>
       <Text className={styles['docs-page-h1']}>{currDoc.name}</Text>
@@ -21,6 +22,7 @@ const PageContent: FC<PageContentProps> = ({ currDoc }) => {
         <PageSubContent
           heading={subcontent.heading}
           content={subcontent.content}
+          navigateToDoc={navigateToDoc}
           key={index}
         />
       ))}

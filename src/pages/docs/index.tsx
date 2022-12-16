@@ -17,6 +17,15 @@ export type DocsDirectoryType = {
 };
 const docs: DocsDirectoryType[] = [
   {
+    name: 'Overview',
+    subcontents: [
+      {
+        heading: '',
+        content: '',
+      },
+    ],
+  },
+  {
     name: 'Basic',
     subcontents: [
       {
@@ -92,13 +101,16 @@ const docs: DocsDirectoryType[] = [
 
 const DocsPage: NextPage = () => {
   const [currDoc, setCurrDoc] = useState<DocsDirectoryType>(docs[0]);
+  const navigateToDoc = (index) => {
+    setCurrDoc(docs[index]);
+  };
   return (
     <div className={styles['docs-page-background']}>
       <NavBar />
       <div className={styles['docs-page-container']}>
         <InterDocBar docs={docs} setCurrDoc={setCurrDoc} currDoc={currDoc} />
-        <PageContent currDoc={currDoc} />
-        <IntraDocBar currDoc={currDoc} />
+        <PageContent currDoc={currDoc} navigateToDoc={navigateToDoc} />
+        {currDoc.name != 'Overview' && <IntraDocBar currDoc={currDoc} />}
       </div>
     </div>
   );

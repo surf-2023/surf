@@ -335,3 +335,12 @@
 .docs-page-div {
   padding-bottom: 10px;
 }
+
+.docs-page-link {
+  color: #ffb016;
+  cursor: pointer;
+}
+
+.docs-page-link:hover {
+  text-decoration: underline;
+}
