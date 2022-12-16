@@ -278,12 +278,13 @@
   display: grid;
   grid-template-columns: 3fr 12fr 4fr;
   height: 90%;
-  padding: 0 20px 20px 20px;
+  padding: 20px;
   color: #ffffff;
 }
 
 .docs-page-content {
   padding: 20px;
+  overflow: auto;
 }
 
 .docs-page-interdocs {
@@ -301,4 +302,7 @@
 }
 .docs-page-selected-doc {
   color: #ffb016;
+}
+.docs-page-subcontent {
+  padding: 20px;
 }

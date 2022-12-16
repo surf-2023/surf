@@ -6,8 +6,8 @@ import { DocsDirectoryType } from '../../pages/docs/index';
 
 type DocsProps = {
   docs: DocsDirectoryType;
-  setCurrDoc: (doc: string) => void;
-  currDoc: string;
+  setCurrDoc: (doc: DocsDirectoryType) => void;
+  currDoc: DocsDirectoryType;
 };
 
 const Docs: FC<DocsProps> = ({ docs, setCurrDoc, currDoc }) => {
@@ -15,7 +15,7 @@ const Docs: FC<DocsProps> = ({ docs, setCurrDoc, currDoc }) => {
   const isEndpoint = docs.subdirectory == undefined;
   const handleClick = () => {
     if (isEndpoint) {
-      setCurrDoc(docs.name);
+      setCurrDoc(docs);
     } else {
       toggleVisibility(isVisible ? false : true);
     }
@@ -23,7 +23,9 @@ const Docs: FC<DocsProps> = ({ docs, setCurrDoc, currDoc }) => {
   return (
     <div>
       <div
-        className={currDoc == docs.name ? styles['docs-page-selected-doc'] : ''}
+        className={
+          currDoc.name == docs.name ? styles['docs-page-selected-doc'] : ''
+        }
         onClick={handleClick}
       >
         {docs.name}

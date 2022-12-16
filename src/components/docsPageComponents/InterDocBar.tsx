@@ -7,8 +7,8 @@ import { DocsDirectoryType } from '../../pages/docs/index';
 
 type InterDocBarProps = {
   docs: DocsDirectoryType[];
-  setCurrDoc: (doc: string) => void;
-  currDoc: string;
+  setCurrDoc: (doc: DocsDirectoryType) => void;
+  currDoc: DocsDirectoryType;
 };
 const InterDocBar: FC<InterDocBarProps> = ({ docs, setCurrDoc, currDoc }) => {
   return (
