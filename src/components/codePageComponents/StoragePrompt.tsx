@@ -1,9 +1,20 @@
 import { FC, useState } from 'react';
 
+import { Payload } from '@/pages/code';
+
 import StoragePromptOne from './StoragePromptOne';
 import StoragePromptTwo from './StoragePromptTwo';
 
-const StoragePrompt: FC = ({ setCurrPrompt, setPayload, payload }) => {
+type StoragePromptProps = {
+  setCurrPrompt: (prompt: string) => void;
+  setPayload: (payload: Payload) => void;
+  payload: Payload;
+};
+const StoragePrompt: FC<StoragePromptProps> = ({
+  setCurrPrompt,
+  setPayload,
+  payload,
+}) => {
   const [isPartOne, setPart] = useState(true);
   if (isPartOne) {
     return (

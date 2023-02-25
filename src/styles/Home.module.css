@@ -264,6 +264,10 @@
   background: #1f1f1f;
 }
 
+.code-page-loading-screen {
+  padding: 10px;
+}
+
 .code-page-code-window {
   height: 90vh;
   width: 50vw;
@@ -274,12 +278,13 @@
   display: grid;
   grid-template-columns: 3fr 12fr 4fr;
   height: 90%;
-  padding: 0 20px 20px 20px;
+  padding: 20px;
   color: #ffffff;
 }
 
 .docs-page-content {
   padding: 20px;
+  overflow: auto;
 }
 
 .docs-page-interdocs {
@@ -297,4 +302,50 @@
 }
 .docs-page-selected-doc {
   color: #ffb016;
+}
+.docs-page-subcontent {
+  padding: 20px;
+}
+
+.docs-page-h1 {
+  font-family: 'Mona Sans', 'Mona Sans Header Fallback', -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  text-align: center;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 40px;
+  line-height: 56px;
+  color: #ffb016;
+  margin: 0;
+}
+
+.docs-page-h2 {
+  font-family: 'Mona Sans', 'Mona Sans Header Fallback', -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 46px;
+  color: #ffffff;
+  margin: 0;
+}
+
+.docs-page-div {
+  padding-bottom: 10px;
+}
+
+.docs-page-link {
+  font-style: normal;
+  font-weight: 900;
+  font-family: 'Mona Sans', 'Mona Sans Header Fallback', -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  color: #ffb016;
+  cursor: pointer;
+}
+
+.docs-page-link:hover {
+  text-decoration: underline;
 }

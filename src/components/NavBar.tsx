@@ -183,8 +183,8 @@ const NAV_ITEMS: Array<NavItem> = [
         href: 'https://solana.com/',
       },
       {
-        label: 'Meet Rust',
-        subLabel: 'An exclusive list for contract work',
+        label: 'Our Docs',
+        subLabel: 'Everything you need to know to use our platform',
         href: '/docs',
       },
     ],
