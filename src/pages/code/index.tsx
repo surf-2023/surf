@@ -10,6 +10,8 @@ import FileExplorer from '@/components/codePageComponents/FileExplorer';
 import Prompt from '@/components/codePageComponents/Prompt';
 import NavBar from '@/components/NavBar';
 
+import { ESCROW_KEYWORDS } from '@/constant/data';
+
 const CodePage: NextPage = () => {
   const [isWritten, setIsWritten] = useState(false);
   const [payload, setPayload] = useState({});
@@ -48,7 +50,7 @@ const CodePage: NextPage = () => {
           new URLSearchParams({ dbname, attrnames, attrtypes })
       );
     } else if (payload.template == 'Free Writing') {
-      const endpoint = payload.text.includes('escrow')
+      const endpoint = ESCROW_KEYWORDS.some((v) => payload.text.includes(v))
         ? '/api/escrow'
         : '/api/vesting';
       res = await fetch(endpoint);

@@ -2,6 +2,7 @@ import { FC, useEffect, useState } from 'react';
 
 import styles from '../../styles/Home.module.css';
 
+import { ESCROW_KEYWORDS, VESTING_KEYWORDS } from '@/constant/data';
 const WrittenPrompt: FC = ({
   setCurrPrompt,
   setPayload,
@@ -34,7 +35,12 @@ const WrittenPrompt: FC = ({
             if (text.length == '') {
               alert('Invalid Input: Text must be non-empty');
               return;
-            } else if (!(text.includes('vesting') || text.includes('escrow'))) {
+            } else if (
+              !(
+                ESCROW_KEYWORDS.some((v) => text.includes(v)) ||
+                VESTING_KEYWORDS.some((v) => text.includes(v))
+              )
+            ) {
               alert('Prompt could not be interpreted');
               return;
             }
