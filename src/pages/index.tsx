@@ -41,7 +41,7 @@ const Home: NextPage = () => {
               Smart Contract{' '}
               <span className={styles['gradient1']}>made easy</span>
               <br></br>
-              with Surf
+              with Surf.
             </Text>
           </Center>
           <Center className={styles['p']}>
